@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="pk-gold">
+    <ion-title>ค้นหาที่จอดรถ</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="pk-gold">
+    <ion-searchbar (ionInput)="doSearch($event)" debounce="1000" placeholder="ค้นหา"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="addParking()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <button ion-item *ngFor="let p of parkings" (click)="viewParkingDetail(p)">
+      <ion-thumbnail item-left>
+        <img [src]="p.photo" *ngIf="p.photo">
+        <img src="./assets/img/no-image.png" *ngIf="!p.photo">
+      </ion-thumbnail>
+      <h1>{{ p.name }}</h1>
+      <p ion-text color="primary" item-right *ngIf="p.distance">{{ p.distance }} km</p>
+      <p ion-text *ngIf="p.available">ว่าง {{ p.available }}</p>
+      <p ion-text color="danger" *ngIf="!p.available">เต็มแล้ว</p>
+    </button>
+  </ion-list>
+</ion-content>

@@ -38,7 +38,11 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  pk-gold:  (
+    base: #FAA21C,
+    contrast: #fff
+  )
 );
 
 
@@ -86,3 +90,19 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: "Prompt";
+  src: url(../assets/fonts/Prompt-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Prompt";
+  src: url(../assets/fonts/Prompt-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+* {
+  font-family: 'Prompt', sans-serif;
+}

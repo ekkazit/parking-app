@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="pk-gold">
+    <ion-title>สแกน QR</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-card *ngIf="parking">
+      <img [src]="parking.photo" *ngIf="parking.photo">
+      <ion-card-content>
+        <ion-card-title>
+          {{ parking.name }}
+          <p ion-text color="primary" *ngIf="parking.available">ว่าง {{ parking.available }}</p>
+          <p ion-text color="danger" *ngIf="!parking.available">เต็มแล้ว</p>
+        </ion-card-title>
+        <p>{{ parking.description }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-item-group>
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <button ion-button round block (click)="scanQRCode()">เริ่มการสแกน</button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="pk-gold">
+    <ion-title>เส้นทาง {{ parking.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab right top>
+    <button ion-fab color="primary" (click)="startGPS()">
+      <ion-icon name="locate"></ion-icon>
+    </button>
+    <button ion-fab color="light" (click)="stopGPS()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+  <div #map id="map"></div>
+</ion-content>

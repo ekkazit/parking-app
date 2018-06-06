@@ -1,14 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-tabs color="pk-gold">
+  <ion-tab [root]="parkingPage" tabTitle="ที่จอดรถ" tabIcon="navigate"></ion-tab>
+  <ion-tab [root]="mapPage" tabTitle="แผนที่" tabIcon="map"></ion-tab>
+  <ion-tab [root]="qrcodePage" tabTitle="QR Code" tabIcon="qr-scanner"></ion-tab>
+  <ion-tab [root]="settingPage" tabTitle="ตั้งค่า" tabIcon="cog"></ion-tab>
+</ion-tabs>

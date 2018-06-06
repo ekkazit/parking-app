@@ -1,0 +1,52 @@
+<ion-content>
+  <div padding *ngIf="isLoggedIn; else facebookLogin">
+    <h2>Hi, {{users.name}} ({{users.email}})</h2>
+    <p>
+      Gender: {{users.gender}}
+    </p>
+    <p>
+      <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+    </p>
+    <p>
+      <button ion-button color="primary" (click)="continueToApp()">Continue</button>
+      <button ion-button color="danger" (click)="logoutWithFacebook()">
+        Logout
+      </button>
+    </p>
+  </div>
+  <ng-template #facebookLogin>
+    <div class="pk-login-content" padding>
+      <ion-row class="pk-logo-row">
+        <ion-col></ion-col>
+        <ion-col>
+          <img src="./assets/img/300x200.png" />
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <div class="pk-login-box">
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+              <ion-item>
+                <ion-input type="text" placeholder="ชื่อผู้ใช้" [(ngModel)]="username"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pk-signup-col">
+            <button ion-button class="pk-submit-btn" color="pk-gold" full type="submit" (click)="doLogin()">Login</button>
+            <button ion-button class="pk-submit-btn-rounded" block icon-right (click)="loginWithFacebook()">
+              Login with
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+            <button ion-button class="pk-register-btn" block clear>สมัครสมาชิกใหม่</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </ng-template>
+</ion-content>

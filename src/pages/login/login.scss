@@ -1,0 +1,61 @@
+page-login {
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .pk-login-content {
+    background: #1c2627 url("../assets/img/bg.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+
+    .pk-logo-row {
+      padding-top: 80px;
+      padding-bottom: 20px;
+    }
+
+    .pk-logo-row img {
+      border-radius: 5px;
+    }
+
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+
+    ion-item {
+      border-radius: 30px !important;
+      padding-left: 30px !important;
+      margin-bottom: 10px;
+      border-bottom: 0px !important;
+      box-shadow: none !important;
+    }
+
+    .pk-signup-col {
+      margin: 0px 16px 0px 16px;
+      padding-bottom: 20px;
+    }
+
+    .item-inner {
+      border-bottom-color: #fff !important;
+      box-shadow: none !important;
+      height: 32px;
+    }
+
+    .pk-submit-btn {
+      background: #FAA21C;
+      box-shadow: none;
+      height: 40px;
+      border-radius: 30px !important;
+    }
+
+    .pk-submit-btn-rounded {
+      box-shadow: none;
+      height: 40px;
+      border-radius: 30px !important;
+    }
+
+    .pk-register-btn {
+      color: #fff;
+    }
+  }
+}

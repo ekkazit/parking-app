@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="pk-gold">
+    <ion-title>{{ parking.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="parking.shared_photo" *ngIf="parking.shared_photo">
+        <img src="./assets/img/no-person.jpg" *ngIf="!parking.shared_photo">
+      </ion-avatar>
+      <h2>{{ parking.shared_by }}</h2>
+      <p>เมื่อ {{ parking.shared_date|amTimeAgo }}</p>
+    </ion-item>
+    <img [src]="parking.photo" *ngIf="parking.photo">
+    <ion-card-content>
+      <ion-card-title>
+        {{ parking.name }}
+        <span *ngIf="parking.available">(ว่าง {{ parking.available }})</span>
+        <p ion-text color="danger" *ngIf="!parking.available">เต็มแล้ว</p>
+      </ion-card-title>
+      <p>{{ parking.description }}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear small icon-left (click)="callPhone()">
+          <ion-icon name="call"></ion-icon>
+          <div>โทร</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small icon-left (click)="gotoMap()">
+          <ion-icon name="map"></ion-icon>
+          <div>ดูแผนที่</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small icon-left (click)="gotoGPS()">
+          <ion-icon name="locate"></ion-icon>
+          <div>เส้นทาง</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
